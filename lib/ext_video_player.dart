@@ -279,7 +279,7 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
 
         Uri uri = Uri.parse('http://google.com?' + response.body);
         var jsonRes = jsonDecode(uri.queryParameters['player_response']);
-        var formats = jsonRes['streamingData']['formats'];
+        var formats = jsonRes['streamingData']['adaptiveFormats'];
         formats.forEach((format) {
           if (videoUrls[format['quality']] == null) {
             videoUrls[format['quality']] = format['url'];
